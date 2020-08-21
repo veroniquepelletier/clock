@@ -1,14 +1,13 @@
 import React from "react";
 import { Jumbotron } from "react-bootstrap";
 
-import { AnalogClock, DigitalClock } from "./components";
+import Clocks from "./views/clocks/Clocks";
 
 function App() {
   return (
     <Jumbotron>
       Synchronized Clocks
-      <AnalogClock></AnalogClock>
-      <DigitalClock></DigitalClock>
+      <Clocks initialDate={new Date()}></Clocks>
     </Jumbotron>
   );
 }
