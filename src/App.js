@@ -5,7 +5,7 @@ import Clocks from "./views/clocks/Clocks";
 
 function App() {
   return (
-    <Jumbotron>
+    <Jumbotron style={{ minHeight: "30rem" }}>
       Synchronized Clocks
       <Clocks initialDate={new Date()}></Clocks>
     </Jumbotron>

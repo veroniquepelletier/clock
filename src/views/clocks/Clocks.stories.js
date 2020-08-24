@@ -8,4 +8,4 @@ export default {
 };
 const Template = (args) => <Clocks initialDate={new Date()} />;
 
-export const Default = Template.bind({});
+export const Default = Template;

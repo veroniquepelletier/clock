@@ -1,11 +1,23 @@
 import React, { useEffect, useState, useCallback } from "react";
 import DateTimePicker from "react-datetime-picker";
+import styled from "@emotion/styled";
 
 import { AnalogClock, DigitalClock } from "../../components";
 
-const SECOND = 1000;
+const SECOND = 1000; // one second for intervals
 
-export const Clocks = () => {
+const ClockContainer = styled.div({
+  width: "15rem",
+  height: "15rem",
+  float: "left",
+});
+
+const DateTimeContainer = styled.div({
+  width: "100%",
+  height: "5rem",
+});
+
+const Clocks = () => {
   const getTime = useCallback((date) => {
     return {
       hours: date.getHours(),
@@ -18,7 +30,6 @@ export const Clocks = () => {
   const [date, setDate] = useState(new Date());
 
   const handleDateChanged = (newDate) => {
-    console.log("CHANGED");
     setDate(newDate);
     getTime(newDate);
   };
@@ -36,9 +47,21 @@ export const Clocks = () => {
 
   return (
     <>
-      <DateTimePicker onChange={handleDateChanged} value={date} />
-      <AnalogClock time={time}></AnalogClock>
-      <DigitalClock time={time}> </DigitalClock>
+      <DateTimeContainer>
+        <DateTimePicker
+          maxDetail="second"
+          onChange={handleDateChanged}
+          value={date}
+        />
+      </DateTimeContainer>
+      <ClockContainer>
+        <AnalogClock time={time}></AnalogClock>
+      </ClockContainer>
+      <ClockContainer>
+        <DigitalClock time={time}></DigitalClock>
+      </ClockContainer>
     </>
   );
 };
+
+export default Clocks;
