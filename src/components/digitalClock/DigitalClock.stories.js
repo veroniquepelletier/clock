@@ -6,7 +6,7 @@ export default {
   component: DigitalClock,
   argTypes: {},
 };
-const Template = (args) => (
+export const Default = () => (
   <DigitalClock
     time={{
       hours: 1,
@@ -16,7 +16,6 @@ const Template = (args) => (
   />
 );
 
-export const Default = Template.bind({});
 export const Midnight = () => (
   <DigitalClock
     time={{

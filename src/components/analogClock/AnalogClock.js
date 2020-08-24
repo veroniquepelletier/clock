@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
-
+import React, { useEffect, useCallback } from "react";
 import "./analogClock.scss";
 
 export const AnalogClock = ({ time }) => {

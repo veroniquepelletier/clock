@@ -6,7 +6,8 @@ export default {
   component: AnalogClock,
   argTypes: {},
 };
-const Template = (args) => (
+
+export const Default = () => (
   <AnalogClock
     time={{
       hours: 1,
@@ -15,8 +16,6 @@ const Template = (args) => (
     }}
   />
 );
-
-export const Default = Template.bind({});
 
 export const Midnight = () => (
   <AnalogClock
